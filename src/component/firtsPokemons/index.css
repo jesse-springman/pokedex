@@ -1,0 +1,58 @@
+.cont{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    
+}
+
+
+.cont .logo{
+    height: 70px;
+    
+}
+
+
+.lista{
+    margin: 30px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+  }
+
+  .lista .card{
+    padding: 10px;
+    text-align: center;
+    border: 2px solid ;
+    background-color: #2f5071;
+    border-radius: 10px;
+  
+  }
+
+
+  .lista .card:hover{
+    font-size: 18px;
+    box-shadow:  2px 2px 15px 1px #09d4ef;
+    background-color: rgb(17, 17, 200);
+    transition: .3s;
+  }
+
+
+.btn{
+  margin: 20px;
+padding: 15px;
+background:#2f5071;
+border:2px solid;
+border-radius: 10px;
+cursor: pointer;
+}
+
+  .btn:hover{
+    font-size: 17px;
+ box-shadow:  2px 2px 15px 1px #09d4ef;
+ background-color: rgb(17, 17, 200);
+ transition: .3s;
+  }
