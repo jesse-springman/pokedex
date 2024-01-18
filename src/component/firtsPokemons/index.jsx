@@ -5,7 +5,7 @@ import logo from '../pokemons/img/pokedex.jpg'
 import { Link } from "react-router-dom";
 import { MorePokemons } from "../allPokemon";
 import '../firtsPokemons/index.css'
-import { Details } from "../details";
+
 
 export const FirtsPokemons = () => {
 
@@ -75,10 +75,11 @@ export const FirtsPokemons = () => {
             </ul>
 
 
-                 <ButtonPoke onClick={() => addPoke()}>Mais Pokemons</ButtonPoke> 
-
+                
             {render ? <MorePokemons /> : null}
 
+
+            <ButtonPoke onClick={() => addPoke()}>Mais Pokemons</ButtonPoke> 
 
            
         </section>

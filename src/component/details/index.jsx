@@ -1,4 +1,4 @@
-import { MovePokemons } from "../../move"
+import { MovePokemons } from '../move'
 
 export const Details = () =>{
    return(
