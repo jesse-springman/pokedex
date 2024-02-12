@@ -1,42 +1,47 @@
-import styled from "styled-components";
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import logo from '../pokemons/img/pokedex.jpg'
+import logo from '../../img/pokedex.jpg'
 import { Link } from "react-router-dom";
-import { MorePokemons } from "../allPokemon";
-import '../firtsPokemons/index.css'
+import { SectionContainer, Logo, Ul, Iten, H3, Button, DivButtons, P } from "../../style/firtsPoke-style";
+import { ThemeContext } from "../../context/theme.context";
+import { ToggleTheme } from "../../context/toggle-theme";
 
 
 export const FirtsPokemons = () => {
 
     const [pokemons, setPokemons] = useState([])
-    const [render, setRender] = useState(false);
 
+    const [buttonLess, setButtonLess] = useState(false)
+
+    const [maxPokemon, setMaxPokemon] = useState(false)
+
+    const { theme } = useContext(ThemeContext)
 
 
     useEffect(() => {
         async function fetchData() {
-          
+
             try {
                 const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=10`)
-    
+
                 const data = response.data
-    
-    
+
+
                 const nameList = data.results.map(async (pokemon) => {
                     const response = await axios.get(pokemon.url)
-    
+
                     return await response.data
                 })
-    
+
                 const dataPokemon = await Promise.all(nameList)
-    
+
                 setPokemons(dataPokemon);
             }
 
             catch (error) {
                 console.error(error)
-    
+
             }
 
         }
@@ -46,61 +51,122 @@ export const FirtsPokemons = () => {
 
     }, [])
 
-    const addPoke = () => {
-        setRender(true)
-      }
-    
+
+    async function addPoke() {
+        try {
+
+            if (pokemons.length < 20) {
+                setButtonLess(true)
+
+                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=10&offset=20`)
+
+                const data = response.data
+
+
+                const nameList = data.results.map(async (pokemon) => {
+                    const response = await axios.get(pokemon.url)
+
+                    return await response.data
+                })
+
+                const dataPokemon = await Promise.all(nameList)
+
+                setPokemons([...pokemons, ...dataPokemon]);
+            }
+
+            else {
+                setMaxPokemon(true)
+
+            }
+
+
+
+        }
+
+        catch (error) {
+            console.error(error)
+
+        }
+    }
+
+
+    function lessPoke() {
+
+        const less = pokemons.slice(0, 10)
+
+        setPokemons(less)
+
+        setMaxPokemon(false)
+
+        setButtonLess(false)
+    }
+
+
 
     return (
-        <section className="cont">
+        <SectionContainer bgall={theme.background} >
 
-            <img className="logo" src={logo} alt="pokedex" />
+            <Logo src={logo} alt="pokedex" />
 
-            <ul className="lista">
+            <Ul >
 
                 {
                     pokemons.map((poke, index) => {
 
                         return (
+                            <>
 
-                            <li className="card" key={index}>
-                                <Link to={`pokemon/${poke.id}`} >
-                                    <img src={poke.sprites.front_default} alt={poke.name} />
-                                    <h3 className="name">{poke.name}</h3>
-                                </Link>
-                            </li>
+                                <Iten bord={theme.border} shadow={theme.shadow} bghover={theme.bgHoverCard} key={index}>
+                                    <Link to={`pokemon/${poke.id}`} >
+                                        <img src={poke.sprites.front_default} alt={poke.name} />
+                                        <H3 style={{ color: theme.color }}>{poke.name}</H3>
+                                    </Link>
+                                </Iten>
+                            </>
                         )
                     })
                 }
-            </ul>
+            </Ul>
+
+            {maxPokemon ? (
+                <P>Number maximum is 20 Pokemons </P>
+
+            ) : ''}
 
 
-                
-            {render ? <MorePokemons /> : null}
+            <DivButtons>
+
+               
 
 
-            <ButtonPoke onClick={() => addPoke()}>Mais Pokemons</ButtonPoke> 
 
-           
-        </section>
+
+                <Button bg={theme.bgIten} border={theme.border} shadow={theme.shadow} colorfont={theme.color} onClick={() => addPoke()} >More Pokemons</Button>
+
+                {buttonLess ? (
+
+                    <Button bg={theme.bgIten} border={theme.border} shadow={theme.shadow} colorfont={theme.color} onClick={() => lessPoke()} >Less Pokemons</Button>
+
+
+                ) : ''}
+
+
+                <ToggleTheme />    
+
+            </DivButtons>
+
+        </SectionContainer>
     )
-    
+
 }
 
-const ButtonPoke = styled.button
-  `
-margin: 20px;
-padding: 15px;
-background:#2f5071;
-border:2px solid;
-border-radius: 10px;
-cursor: pointer;
 
 
-&:hover {
- font-size: 17px;
- box-shadow:  2px 2px 15px 1px #09d4ef;
- background-color: rgb(17, 17, 200);
- transition: .3s;
-}
-`;
+
+
+
+
+
+
+
+
