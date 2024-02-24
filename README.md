@@ -6,15 +6,9 @@ Esse código consiste em simulação de uma tela de um <strong>Pokedex</strong>.
 
 ## Funcionabilidades do projeto
 O usuário pode escolher qualquer um dos 10 pokemons exibido em tela, ao selecionar o mesmo será direcionado para uma tela de 'details' do pokemon,contendo as informações como : Movimentos, Habilidades e tipo de cada pokemon.<br>
-Caso o usuário queira mais opções de pokemons basta clicar no botão "More Pokemons" que será carregado mais 10 pokemons.
+Caso o usuário queira mais opções de pokemons basta clicar no botão "More Pokemons" que será carregado mais 10 pokemons. A interface  disponibiliza um campo onde o usuário pode escrever o tipo do pokemon que procura para serem filtrados,  entregando assim pokemons somente daquele tipo.
+
 <br><br><br><br>
-
-
-
- 
-
-
-
 
 ## Tecnológias utilizadas 
 
@@ -68,7 +62,8 @@ Caso o usuário queira mais opções de pokemons basta clicar no botão "More Po
   Como essa é uma aplicação contendo páginas divergentes que realiza requisições em banco de dados, foi imprescindível o uso de certas bibliotecas para deixar o código mais limpo e compreensível possível.<br>
   Com auxílio dessas bibliotecas o código foi estruturado, tanto a página  'home' como a 'details'. A <strong>home</strong> renderiza os 10 pokemons inicias em tela e ao clicar no botão 'more Pokemons' carrega mais 10 pokemons novos rendeizando o total 20 pokemons em tela para isso foi realizado duas requições de API, então foi assim que a criação do código se iniciou. Depois que a página <strong>home</strong> foi finalizada era vez da <strong>Details</strong>, houve a chamada de duas requições para capturar todos os dados pedidos, foi necessário a criação de alguns componentes com o intuito de  organizar melhor a aplicação, foi um pouco custoso para encontrar todos os dados pois havia diversos objetos contendo informações. Outra dificuldade inconveniente foi um erro de validação do retorno da API, mas com empenho e pesquisa esse erro foi superado com um simples operador ternário.<br>
   O aplicativo disponíbiliza um botão de 'Theme' que muda as cores da interface permintindo que o usuário possa escolher entre o tema Ligth ou Dark em todas as páginas, foi utilizado o hook 'UseContext' fornecido pela depêdencia do React para ser possível essa proeza.<br>
-  Hoje em dia é essêncial desenvolver aplicativos que se adaptam a todos os tamanhos de telas, tendo isso em mente esse código é totalmente responsivo para desktop, smartphones e tablets.
+  Hoje em dia é essêncial desenvolver aplicativos que se adaptam a todos os tamanhos de telas, tendo isso em mente esse código é totalmente responsivo para desktop, smartphones e tablets.<br>
+  E por fim foi criado um campo que filtra os pokemons de acordo com o tipo que o usuário digitou, a maior dificuldade foi arrumar a responsividade do código, como o filtro diminui a lista de pokemon o tamanho do conteúdo muda drasdicamente sendo assim bagunçando toda a estilização editada anteriormente.
 
   
 
@@ -76,7 +71,7 @@ Caso o usuário queira mais opções de pokemons basta clicar no botão "More Po
 ### Escolha o Pokemon 
 * Interface da tela <strong>home</strong> carregada será disponibilizado para a escolha 10 pokemons, ao clicar em qualquer um desses será renderizado a página de <strong>Details</strong> do escolhido, contendo os atributos do mesmo.
 
-<img src='./src/img/light.png' >
+<img src='./src/img/more.png' >
     <br>
     <br>
     <br>
@@ -86,7 +81,7 @@ Caso o usuário queira mais opções de pokemons basta clicar no botão "More Po
   ### Mais Pokemons para escolha
 * Ainda na tela <strong>home</strong> logo abaixo dos pokemons contém um botão 'More Pokemons' que quando o mesmo é clicado é inserido mais 10 pokemons na lista de escolha, fornecendo assim 20 pokemons ao usuário.
 
-<img src='./src/img/all-poke.png' >
+<img src='./src/img/20.png' >
 
   <br>
   <br>
@@ -101,7 +96,7 @@ Caso o usuário queira mais opções de pokemons basta clicar no botão "More Po
 <img src='./src/img/less.png' >
  <br>
  <br>
-<img src='./src/img/light.png' >
+<img src='./src/img/hom1.png' >
 
   <br>
   <br>
@@ -117,7 +112,7 @@ Caso o usuário queira mais opções de pokemons basta clicar no botão "More Po
 <br>
 
 #### Details
-<img src='./src/img/details-dark.png' >
+<img src='./src/img/dark-details.png' >
 
   <br>
   <br>
@@ -130,3 +125,20 @@ Caso o usuário queira mais opções de pokemons basta clicar no botão "More Po
 <br>
 <br>
 <img src='./src/img/dark.png' >
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+#### Busca
+* Caso o usuário procura um pokemon de um tipo específico é só digitar o tipo que o ele procura no campo de busca, que será executado uma filtragem na lista e só mostrará os pokemons que corresponde aquele mesmo tipo.
+
+<img src='./src/img/busca.png' >
+
+  <br>
+  <br>
+  
+Caso o usuário digite um tipo de pokemon que não existe no banco de dados da pokedex, aparecerá uma mensagem de erro.
+
+<img src='./src/img/busca-erro.png' >

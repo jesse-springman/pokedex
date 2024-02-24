@@ -1,22 +1,38 @@
 import styled from "styled-components";
 
+
 export const SectionContainer = styled.section `
- background-color: ${props => (props.bgall)};
- height: 100vh;
+background-color:${props => props.bgall} ;
+height: ${props => props.altura  === true && !props.responsive ? '' : '100vh'};
  display: flex;
  flex-direction: column;
  justify-content: center;
  align-items: center; 
  position: relative;
-    
   
- @media(max-width: 720px){
- height: 100%;
+ @media(max-width: 700px){
+   height: ${props => props.responsive  === true ? '' : '100%'};
     }
+`
+
+
+
+
+export const Input = styled.input`
+margin: 50px;
+padding: 5px;
+border-radius: 5px;
+border: 2px solid #1109ef;
+width: 300px;
+outline: none;
+color:black;
+
+
 `
 
 export const Logo = styled.img `
 height: 60px;
+margin: 20px;
 `
 
 
@@ -31,10 +47,13 @@ gap: 15px;
       grid-template-columns: repeat(2, 1fr);
     }
 `
-
+export const DivFil = styled.div`
+height: 100%;
+`
 
 export const Iten = styled.li`
   padding: 12px;
+  max-width: 150px;
   text-align: center;
   border: ${props => (props.bord)} ;
   border-radius: 10px;
@@ -48,9 +67,14 @@ export const Iten = styled.li`
 }
 `
 export const H3 = styled.h3`
-text-transform: capitalize;
-`
+color:${props => props.textcor};
 
+
+ &:first-letter{
+    text-transform: uppercase;
+} 
+
+ `
 
 
 export const Button = styled.button`
@@ -85,6 +109,7 @@ position: static;
 
 export const DivButtons = styled.div`
 display: flex;
+
 
 @media(max-width: 720px){
  align-items: center;

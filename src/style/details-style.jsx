@@ -9,7 +9,7 @@ export const Cont = styled.section`
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    height: 100vh;
+    height: 100% ;
 
     @media(max-width: 721px){
         height: auto
@@ -20,7 +20,8 @@ export const Div = styled.div`
  display: flex;
  flex-direction: column;
  align-items: center;
- padding: 15px 25px;
+ margin-bottom: 20px;
+ padding:  25px;
  background-color:${props => props.bgcard};
  border-radius: 20px;
  border: ${props => props.border}  ;
@@ -79,9 +80,7 @@ font-weight: 200;
 
 margin-left: 10px;
 
-&:first-letter{
-    text-transform: uppercase;
-}
+
 `
 
 export const Lista = styled.ul`
