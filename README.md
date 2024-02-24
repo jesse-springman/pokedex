@@ -141,4 +141,4 @@ Caso o usuário queira mais opções de pokemons basta clicar no botão "More Po
   
 Caso o usuário digite um tipo de pokemon que não existe no banco de dados da pokedex, aparecerá uma mensagem de erro.
 
-<img src='./src/img/busca-erro.png' >
+<img src='./src/img/type-err.png' >

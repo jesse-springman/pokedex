@@ -153,7 +153,7 @@ export const FirtsPokemons = () => {
 
             {search.length > 0 && pokefil.length === 0 ? (
 
-                <P>Pokemon não consta na pokedex</P>
+                <P>the type of pokemon being searched for is not listed in the pokedex</P>
 
             ) : ''}
 
