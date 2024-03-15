@@ -28,7 +28,7 @@ export const FirtsPokemons = () => {
 
 
     useEffect(() => {
-        async function fetchData() {
+        async  function fetchData() {
 
             try {
                 const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=10`)
@@ -42,7 +42,7 @@ export const FirtsPokemons = () => {
                     return await response.data
                 })
 
-                const dataPokemon = await Promise.all(nameList)
+                 const dataPokemon = await Promise.all(nameList)
 
                 setPokemons(dataPokemon);
             }
@@ -132,7 +132,7 @@ export const FirtsPokemons = () => {
         }
     })
 
-    console.log(pokefil)
+    console.log(pokemons)
 
     return (
         <SectionContainer altura={height} bgall={theme.background} responsive={inputFilled} >

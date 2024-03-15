@@ -14,7 +14,7 @@ function App() {
     <ThemeProvider>
       <GlobalStyle/>
       <AppRouter/>
-      {/* <ToggleTheme/> */}
+
     </ThemeProvider>
    
   </div>
