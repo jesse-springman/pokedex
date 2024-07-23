@@ -4,6 +4,18 @@
 Esse código consiste em simulação de uma tela de um <strong>Pokedex</strong>.
 <strong>Pokedex</strong> é uma enciclopédia virtual como se fosse um celular que tem em seu banco de dados de todas as espécies de Pokemons
 
+
+<img src='./src/assets/home.gif' >
+
+ <br><br><br>
+
+
+## Responsividade
+Um dos conceitos mais importantes nos dias de hoje é integrar um aplicativo que se adequa a varios tamanhos de tela, como desktop, tablets, smartphones etc. E o meu projeto foi elaborado pensando nisso.
+
+<img src="./src/assets/respo.gif">
+
+
 ## Funcionabilidades do projeto
 O usuário pode escolher qualquer um dos 10 pokemons exibido em tela, ao selecionar o mesmo será direcionado para uma tela de 'details' do pokemon,contendo as informações como : Movimentos, Habilidades e tipo de cada pokemon.<br>
 Caso o usuário queira mais opções de pokemons basta clicar no botão "More Pokemons" que será carregado mais 10 pokemons. A interface  disponibiliza um campo onde o usuário pode escrever o tipo do pokemon que procura para serem filtrados,  entregando assim pokemons somente daquele tipo.
