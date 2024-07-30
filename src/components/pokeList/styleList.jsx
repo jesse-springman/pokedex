@@ -157,7 +157,7 @@ border-radius: 15px;
 border: ${props => props.border};
 transition: 3ms;
 padding: 20px;
-
+margin-bottom: 20px;
 
 &:hover {
  font-size: 18px;

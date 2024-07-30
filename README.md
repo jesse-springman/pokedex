@@ -11,7 +11,7 @@ Esse código consiste em simulação de uma tela de um <strong>Pokedex</strong>.
 
 
 ## Responsividade
-Um dos conceitos mais importantes nos dias de hoje é integrar um aplicativo que se adequa a varios tamanhos de tela, como desktop, tablets, smartphones etc. E o meu projeto foi elaborado pensando nisso.
+Um dos conceitos mais importantes nos dias de hoje é entregar um aplicativo que se adequa a varios tamanhos de tela, como desktop, tablets, smartphones etc. E o meu projeto foi elaborado pensando nisso.
 
 <img src="./src/assets/respo.gif">
 
@@ -65,10 +65,7 @@ Caso o usuário queira mais opções de pokemons basta clicar no botão "More Po
     <br>
 
 
-  * Axios<br>
-     <img align="center" alt="Axios" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/axios/axios-plain.svg">  Eficiência nas requisições HTTP. 
-    <br>
-    <br>
+
   
   ## Planejamento
   Como essa é uma aplicação contendo páginas divergentes que realiza requisições em banco de dados, foi imprescindível o uso de certas bibliotecas para deixar o código mais limpo e compreensível possível.<br>
